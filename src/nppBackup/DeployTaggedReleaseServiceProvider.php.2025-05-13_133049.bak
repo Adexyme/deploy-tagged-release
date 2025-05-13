@@ -22,7 +22,7 @@ class DeployTaggedReleaseServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publish config file to host app
             $this->publishes([
-                __DIR__.'/../config/deploy-tagged-release.php' => config_path('deploy-tagged-release.php'),
+                __DIR__.'/../config/deploy-tagged-release.php' => config_path('deploy.php'),
             ], 'deploy-config');
         }
     }
