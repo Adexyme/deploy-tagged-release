@@ -1,0 +1,29 @@
+<?php
+
+namespace Adexyme\DeployTaggedRelease;
+
+use Illuminate\Support\ServiceProvider;
+
+use Adexyme\DeployTaggedRelease\Console\DeployTaggedRelease;
+
+class DeployTaggedReleaseServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        // Merge default config so users can override
+        $this->mergeConfigFrom(__DIR__.'/../config/deploy.php', 'deploy');
+
+        // Register the Artisan command
+        $this->commands([ DeployRelease::class ]);
+    }
+
+    public function boot()
+    {
+        if ($this->app->runningInConsole()) {
+            // Publish config file to host app
+            $this->publishes([
+                __DIR__.'/../config/deploy.php' => config_path('deploy.php'),
+            ], 'deploy-config');
+        }
+    }
+}

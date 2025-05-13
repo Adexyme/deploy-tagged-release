@@ -1,0 +1,26 @@
+{
+  "name": "your-vendor/laravel-deploy-tagged-release",
+  "description": "Laravel CLI command to deploy a tagged release with custom schema (optional).",
+  "license": "MIT",
+  "authors": [
+    { "name": "Adegoke Akintoye", "email": "adexyme@gmail.com" }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Adexyme\\DeployTaggedRelease\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Adexyme\\DeployRelease\\DeployReleaseServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
