@@ -1,5 +1,5 @@
 {
-  "name": "Adexyme/laravel-deploy-tagged-release",
+  "name": "your-vendor/laravel-deploy-tagged-release",
   "description": "Laravel CLI command to deploy a tagged release with custom schema (optional).",
   "license": "MIT",
   "authors": [
